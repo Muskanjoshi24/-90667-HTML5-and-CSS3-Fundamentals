@@ -34,6 +34,6 @@ Designed to work well on both desktop and mobile devices.
 **index.html:** Main page of the website.
 **wishlist.html:** Page to view wishlist items.
 **cart.html:** Page to view cart items.
-**css/:**Directory for stylesheets (Bootstrap, custom styles).
+**css/:** Directory for stylesheets (Bootstrap, custom styles).
 **js/:** Directory for JavaScript files.
 **images/:** Directory for images used on the website.
