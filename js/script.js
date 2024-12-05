@@ -108,7 +108,7 @@ window.onload = function() {
     updateCartCount();
     updateWishlistCount();
 };
-// Cart and Wishlist end
+// Cart and Wishlist end 
 
 //search
 
