@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your wishlist</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Your wishlist</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody id="wishlist-items">
+                <!-- wishlist items will be inserted here -->
+            </tbody>
+        </table>
+        <button class="btn btn-primary" onclick="clearwishlist()">Clear wishlist</button>
+    </div>
+
+    <script>
+        // Function to display wishlist items
+        function displaywishlist() {
+            const wishlist = JSON.parse(localStorage.getItem('wishlist')) || [];
+            const wishlistItemsContainer = document.getElementById('wishlist-items');
+            wishlistItemsContainer.innerHTML = ''; // Clear existing items
+
+            wishlist.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `<td>${item.name}</td><td>₹ ${item.price}</td>`;
+                wishlistItemsContainer.appendChild(row);
+            });
+        }
+
+        // Function to clear the wishlist
+        function clearwishlist() {
+            localStorage.removeItem('wishlist');
+            displaywishlist();
+        }
+
+        // Display wishlist items on page load
+        window.onload = displaywishlist;
+    </script>
+</body>
+</html>
